@@ -1,20 +1,17 @@
-import React from 'react';
-import { BrowserRouter ,Routes, Route } from 'react-router-dom';
-import AdminPage from './pages/AdminPage';
-import GuestPage from './pages/GuestPage';
-import  AuthProvider  from './context/AuthContext.jsx';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Data from './components/Data';
+import Nav from './components/Nav';
+function App() {
+  return (
+    <div>
+        <Nav/>
+        <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Data/>}/>
+        </Routes>
+        </BrowserRouter>
+    </div>
+  )
+}
 
-const App = () => {
-    return (
-        <AuthProvider>
-           <BrowserRouter>
-              <Routes>
-                    <Route path="/admin" component={AdminPage} />
-                    <Route path="/" component={GuestPage} />
-              </Routes>
-           </BrowserRouter>
-        </AuthProvider>
-    );
-};
-
-export default App;
+export default App
