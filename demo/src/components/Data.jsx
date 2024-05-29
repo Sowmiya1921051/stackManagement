@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const AddDishForm = () => {
   const [name, setName] = useState('');
@@ -68,6 +69,9 @@ const AddDishForm = () => {
           <button type="submit" className="bg-violet-600 text-white px-4 py-2 rounded w-full">
             Add Stock Item
           </button>
+          <Link to="/viewItems" className="bg-green-500 text-white px-4 py-2 rounded mt-4 block text-center">
+          View Items
+        </Link> 
         </form>
       </div>
     </div>
